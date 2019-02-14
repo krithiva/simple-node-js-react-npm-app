@@ -41,7 +41,7 @@ stage('Test') {
               container('nodejs') {
                sh "npm install"
                sh "node . &"
-               sh './jenkins/scripts/test.sh'             
+               sh 'npm test --a'             
                echo 'Testing..'
             }
         }
