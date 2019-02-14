@@ -41,7 +41,7 @@ stage('Test') {
               container('nodejs') {
                sh "npm install"
                sh "node . &"
-               sh "npm test"
+               sh "Jest  `--watchAll`"
                 echo 'Testing..'
             }
         }
