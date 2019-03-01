@@ -100,7 +100,19 @@ stage('Test') {
             }
           }
         }
+		stage('Deploy') {
+        when {
+          branch 'master'
+        }
+        steps {
+          dir ('./charts/simple-node-js-react-npm-app') {
+            container('nodejs') {
+              sh "npm start &"
+            }
+          }
+        }
       }
+	  
     }
     post {
         always {
